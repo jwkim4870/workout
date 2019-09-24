@@ -1,30 +1,30 @@
 
 public class ComputerStudent extends Student {
-	private int majors;
-	private int[] majorSubjects;
-	private int total;
+	private int majors;  //subject units
+	private int[] majorSubjects; // Array for subject scores
+	private int total; // total scores
 
 
 	public ComputerStudent( String name, String departmentName, int[] subject, int majors, int[] majorSubject  ) {
-		super( name, departmentName, subject );
+		super( name, departmentName, subject ); // Super class call with info of student name, departmentName and subject name
 		
-		this.majors = majors;
-		majorSubjects = new int[ majors ];
+		this.majors = majors; 
+		majorSubjects = new int[ majors ]; //Array length confirm.
 	
-		int i = 0;
-		for ( int score : majorSubject ) {
-			this.majorSubjects[ i++ ] = score;
+		int i = 0; //???
+		for ( int score : majorSubject ) { //repeat of int score till array length.
+			this.majorSubjects[ i++ ] = score; // score substitution to array
 		}
-		calcTotal();
+		calcTotal(); //total value call
 	}
 	
 	private void calcTotal() {
-		total = calcCommonTotal();
+		total = calcCommonTotal(); // ???
 		for ( int score : majorSubjects ) {
-			total += score;
+			total += score; // score accumulation to int total
 		}
 		
-		super.setAverage( total / (double)( MAX_SUBJECT + majors ) );
+		super.setAverage( total / (double)( MAX_SUBJECT + majors ) ); // ???
 		double average = super.getAverage();
 		
 		if ( average >= EXCELLENT ) {
